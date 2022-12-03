@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
@@ -19,6 +19,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [result, setResult] = useState<string>();
+
+  useEffect(() => {
+    if (isError) setIsLoading(false);
+  }, [isError]);
 
   return (
     <div className='App'>
