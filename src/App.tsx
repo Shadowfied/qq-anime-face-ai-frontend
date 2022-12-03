@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
 import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import {
   Group,
@@ -9,6 +7,8 @@ import {
   Image,
   Title,
   Loader,
+  Paper,
+  Center,
 } from '@mantine/core';
 import { IconPhoto, IconUpload, IconX } from '@tabler/icons';
 
@@ -25,7 +25,17 @@ function App() {
   }, [isError]);
 
   return (
-    <div className='App'>
+    <Paper
+      w={'100%'}
+      h={'100%'}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
       <Title>
         {isError
           ? 'An unknown error occurred. (Most likely rate limited or imge too big) Try again'
@@ -113,7 +123,7 @@ function App() {
           </Group>
         </Dropzone>
       )}
-    </div>
+    </Paper>
   );
 }
 
