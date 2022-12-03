@@ -5,9 +5,7 @@ const port = 3000;
 
 app.use(express.json());
 
-app.use(express.static('dist'))
-
-app.post('/processanime', async (req, res) => {
+app.post('/api/processanime', async (req, res) => {
   fetch(
     'https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process',
     {
@@ -46,6 +44,4 @@ app.post('/processanime', async (req, res) => {
     })
 });
 
-app.listen(port, () => {
-  console.log('we out here on port' + port);
-});
+module.exports = app;
