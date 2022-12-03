@@ -48,7 +48,7 @@ function App() {
             setResult(undefined);
 
             reader.onload = () => {
-              fetch('/processanime', {
+              fetch('/api/processanime', {
                 headers: {
                   'Content-type': 'application/json',
                 },
