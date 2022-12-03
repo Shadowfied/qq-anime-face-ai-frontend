@@ -74,6 +74,7 @@ function App() {
                 .then((res) => res.json())
                 .then((json) => {
                   setIsLoading(false);
+                  setIsError(false);
 
                   if (Array.isArray(json.img_urls)) {
                     setResult(json.img_urls[0]);
